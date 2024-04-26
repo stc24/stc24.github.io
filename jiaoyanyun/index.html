@@ -1,0 +1,14 @@
+<script>
+
+var jiexiurl = "https://jyyapi.jiaoyanyun.com/v1/question/getstdindexurl"
+var post = {appId: "WO_DE_KE_TANG", subjectId: 4, periodId: 3}
+var xhr = new XMLHttpRequest();
+var data = JSON.stringify(post);
+xhr.open("POST", jiexiurl, false);
+xhr.setRequestHeader("Content-Type", "application/json");
+xhr.onload = function() {
+    var json = JSON.parse(this.responseText);
+    window.location.replace(json.data.url)
+}
+xhr.send(data);
+</script>
